@@ -8,5 +8,7 @@ import ContactBanner from '@/layout/ContactBanner.vue';
 <template>
 <div>
 	<ContactBanner/>
+
+	<RouterView/>
 </div>
 </template>
