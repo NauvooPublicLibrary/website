@@ -3,7 +3,7 @@
 	setup
 >
 type Props = {
-	family: 'solid'|'brands'
+	family?: 'solid'|'brands'
 	icon: string;
 }
 
