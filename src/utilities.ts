@@ -91,3 +91,26 @@ function parseSubHours(time: string|number): number {
 
 	return t;
 }
+
+const cache: Record<string, any> = {};
+
+/**
+ * Reads a JSON file and returns its data as the given type
+ *
+ * The utility automatically prepends the storage directory and .json file extension, so supply only the extensionless name of the file.
+ *
+ * @param filename The name of the JSON file to read
+ *
+ * @returns The parsed data
+ */
+export async function readJson<T>(filename: string): Promise<T> {
+	if (cache[filename]) {
+		return cache[filename] as T;
+	}
+
+	const response = await fetch(`/data/${filename}.json`);
+	const result = await response.json() as T;
+	cache[filename] = result;
+
+	return result;
+}
