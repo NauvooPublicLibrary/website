@@ -114,3 +114,57 @@ export async function readJson<T>(filename: string): Promise<T> {
 
 	return result;
 }
+
+/**
+ * Converts a time object to a machine-readable time format
+ *
+ * @param time The time to convert
+ *
+ * @returns The machine-readable time as a string
+ */
+export function convertToMachineFormatTime(time: Time): string {
+	return `${padWithLeadingZero(time.h, 10)}:${padWithLeadingZero(time.m, 10)}:${padWithLeadingZero(time.s, 10)}`;
+}
+
+/**
+ * Converts a given time object to its shortest possible complete representation
+ *
+ * @param time The time to convert
+ *
+ * @returns The formatted short time
+ */
+export function convertToHumanFormatTime(time: Time): string {
+	const isPm = time.h >= 12;
+	if (time.h === 0) {
+		time.h = 12;
+	} else if (time.h > 12) {
+		time.h -= 12;
+	}
+
+	let t = time.h.toString();
+
+	if (time.m > 0) {
+		t = `${t}:${padWithLeadingZero(time.m, 10)}`;
+	}
+
+	if (time.s > 0) {
+		t = `${t}:${padWithLeadingZero(time.s, 10)}`;
+	}
+
+	return t + (isPm ? 'PM' : 'AM');
+}
+
+/**
+ * Pads a number with a leading zero if it is less than a given value
+ *
+ * @param input The input number
+ * @param minimum The minimum value at which the number needs no padding
+ *
+ * @returns The string number with leading zeroes if applicable
+ */
+export function padWithLeadingZero(
+	input: number,
+	minimum: number
+): string {
+	return input < minimum ? `0${input}` : input.toString();
+}
