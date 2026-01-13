@@ -1,7 +1,7 @@
 ﻿/**
  * A standard set of contact information
  */
-export type ContactInfo = {
+export type ContactInformation = {
 	/**
 	 * The person's email address, if public
 	 */
@@ -92,3 +92,12 @@ export type Time = {
 	 */
 	s: number;
 }
+
+export type ThemeColor =
+	| 'primary'
+	| 'secondary'
+	| 'info'
+	| 'warning'
+	| 'danger'
+	| 'light'
+	| 'dark'
