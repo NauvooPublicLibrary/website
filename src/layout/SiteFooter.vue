@@ -51,7 +51,9 @@ const links = [
 			<FooterSection title='Contact'>
 				<ContactInfo
 					v-if='libraryContactInfo'
-					:contact='libraryContactInfo!'/>
+					:contact='libraryContactInfo!'
+					linkColor='light'
+				/>
 			</FooterSection>
 
 			<FooterSection title='Hours'>

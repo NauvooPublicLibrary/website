@@ -1,16 +1,24 @@
 ﻿<script
 	setup
 	lang="ts">
-import type { ContactInformation } from '@/types';
+import { computed } from 'vue';
+import type { ContactInformation, ThemeColor } from '@/types';
 
 type Props = {
 	/**
 	 * The contact info to render
 	 */
 	contact: ContactInformation;
+
+	/**
+	 * The color to use for links
+	 */
+	linkColor?: ThemeColor;
 }
 
-defineProps<Props>();
+const { linkColor } = defineProps<Props>();
+
+const linkColorClass = computed(() => linkColor ? `text-${linkColor}` : undefined);
 </script>
 
 <template>
@@ -40,7 +48,10 @@ defineProps<Props>();
 				<Icon icon='phone' />
 			</template>
 			<template #content>
-				<a :href='`tel:${contact.phone}`'>
+				<a
+					:href='`tel:${contact.phone}`'
+					:class='linkColorClass'
+				>
 					{{ contact.phone }}
 				</a>
 			</template>
@@ -60,7 +71,10 @@ defineProps<Props>();
 				<Icon icon='envelope' />
 			</template>
 			<template #content>
-				<a :href='`mailto:${contact.email}`'>
+				<a
+					:href='`mailto:${contact.email}`'
+					:class='linkColorClass'
+				>
 					{{ contact.email }}
 				</a>
 			</template>
