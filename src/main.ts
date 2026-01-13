@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import setup from './setup.ts';
 
-import './setup.ts';
-
-createApp(App).mount('#app');
+const app = createApp(App);
+setup(app);
+app.mount('#app');
