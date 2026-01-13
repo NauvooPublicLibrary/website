@@ -14,7 +14,7 @@ const target = computed(() => href.startsWith('http') ? '_blank' : undefined);
 	<RouterLink
 		:to='href'
 		:target='target'
-		class='nav-link text-uppercase fw-lighter'
+		class='nav-link text-uppercase'
 	>
 		<slot/>
 	</RouterLink>
