@@ -20,3 +20,14 @@ const target = computed(() => href.startsWith('http') ? '_blank' : undefined);
 	</RouterLink>
 </li>
 </template>
+
+<style scoped>
+.nav-link {
+	border-bottom: 2px solid transparent;
+	transition: border-bottom-color 200ms ease-in-out;
+
+	&:hover {
+		border-bottom-color: var(--bs-primary);
+	}
+}
+</style>
