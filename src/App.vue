@@ -7,10 +7,12 @@ import MainNav from '@/layout/MainNav.vue';
 </script>
 
 <template>
-<div>
+<div class='min-vh-100 d-flex flex-column'>
 	<ContactBanner/>
 	<MainNav/>
 
-	<RouterView/>
+	<main class='flex-grow-1'>
+		<RouterView/>
+	</main>
 </div>
 </template>
