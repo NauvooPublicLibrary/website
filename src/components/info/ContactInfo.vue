@@ -81,9 +81,3 @@ const linkColorClass = computed(() => linkColor ? `text-${linkColor}` : undefine
 		</ContactInfoSection>
 	</address>
 </template>
-
-<style scoped>
-.address {
-	font-style: normal;
-}
-</style>
