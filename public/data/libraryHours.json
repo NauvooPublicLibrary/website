@@ -1,0 +1,35 @@
+﻿[
+	{
+		"_day": "Sunday"
+	},
+	{
+		"_day": "Monday",
+		"startTime": "11AM",
+		"endTime": "6:30PM"
+	},
+	{
+		"_day": "Tuesday",
+		"startTime": "11AM",
+		"endTime": "6:30PM"
+	},
+	{
+		"_day": "Wednesday",
+		"startTime": "9AM",
+		"endTime": "4PM"
+	},
+	{
+		"_day": "Thursday",
+		"startTime": "11AM",
+		"endTime": "6:30PM"
+	},
+	{
+		"_day": "Friday",
+		"startTime": "10AM",
+		"endTime": "5PM"
+	},
+	{
+		"_day": "Saturday",
+		"startTime": "10AM",
+		"endTime": "2PM"
+	}
+]

@@ -1,4 +1,4 @@
-﻿import type { Time } from '@/types.ts';
+﻿import type { EventTime, Time } from '@/types.ts';
 
 const invalidTime = 'You must provide a valid time';
 
@@ -167,4 +167,45 @@ export function padWithLeadingZero(
 	minimum: number
 ): string {
 	return input < minimum ? `0${input}` : input.toString();
+}
+
+/**
+ * Reads the library's hours from configuration
+ */
+export async function getLibraryHours(): Promise<(EventTime|null)[]> {
+	const rawSchedule = await readJson<Record<string, string>[]>('libraryHours');
+	const schedule: (EventTime|null)[] = [];
+
+	for (let day of rawSchedule) {
+		// Closed days will be missing the startTime field
+		if (!day['startTime']) {
+			schedule.push(null);
+			continue;
+		}
+
+		schedule.push(extractEventTimeFromJson(day));
+	}
+
+	return schedule;
+}
+
+/**
+ * Reads JSON input and returns an EventTime
+ *
+ * @param input The JSON input to read
+ */
+export function extractEventTimeFromJson(input: Record<string, string>): EventTime {
+	const time: EventTime = {
+		startTime: parseTime(input['startTime']!)
+	};
+
+	if (input['endTime']) {
+		time.endTime = parseTime(input['endTime']!);
+	}
+
+	if (input['date']) {
+		time.date = new Date(input['date']);
+	}
+
+	return time;
 }
