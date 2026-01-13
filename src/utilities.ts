@@ -1,5 +1,24 @@
 ﻿import type { EventTime, Time } from '@/types.ts';
 
+/**
+ * Converts a numeric day of the week to a string representation
+ *
+ * @param day The day number to retrieve
+ */
+export function mapDayNumberToName(day: number): string {
+	const days = [
+		'Sun',
+		'Mon',
+		'Tue',
+		'Wed',
+		'Thu',
+		'Fri',
+		'Sat'
+	];
+
+	return days[day]!;
+}
+
 const invalidTime = 'You must provide a valid time';
 
 /**
