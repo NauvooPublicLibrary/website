@@ -4,6 +4,7 @@
 >
 import ContactBanner from '@/layout/ContactBanner.vue';
 import MainNav from '@/layout/MainNav.vue';
+import SiteFooter from '@/layout/SiteFooter.vue';
 </script>
 
 <template>
@@ -14,5 +15,7 @@ import MainNav from '@/layout/MainNav.vue';
 	<main class='flex-grow-1'>
 		<RouterView/>
 	</main>
+
+	<SiteFooter/>
 </div>
 </template>

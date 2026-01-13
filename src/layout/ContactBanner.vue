@@ -4,16 +4,16 @@
 >
 import { onBeforeMount, ref } from 'vue';
 import { getLibraryHours, readJson } from '@/utilities.ts';
-import type { ContactInfo, EventTime } from '@/types.ts';
+import type { ContactInformation, EventTime } from '@/types.ts';
 
 const todaysHours = ref<EventTime|null>();
-const contactInfo = ref<ContactInfo>();
+const contactInfo = ref<ContactInformation>();
 
 onBeforeMount(async () => {
 	const hours = await getLibraryHours();
 	const today = new Date().getDay();
 	todaysHours.value = hours[today];
-	contactInfo.value = await readJson<ContactInfo>('libraryContact')!;
+	contactInfo.value = await readJson<ContactInformation>('libraryContact')!;
 });
 </script>
 
