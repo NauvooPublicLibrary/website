@@ -135,20 +135,24 @@ export function convertToMachineFormatTime(time: Time): string {
  */
 export function convertToHumanFormatTime(time: Time): string {
 	const isPm = time.h >= 12;
-	if (time.h === 0) {
-		time.h = 12;
-	} else if (time.h > 12) {
-		time.h -= 12;
+	let hours = time.h;
+	const minutes = time.m;
+	const seconds = time.s;
+
+	if (hours === 0) {
+		hours = 12;
+	} else if (hours > 12) {
+		hours -= 12;
 	}
 
-	let t = time.h.toString();
+	let t = hours.toString();
 
-	if (time.m > 0) {
-		t = `${t}:${padWithLeadingZero(time.m, 10)}`;
+	if (minutes > 0) {
+		t = `${t}:${padWithLeadingZero(minutes, 10)}`;
 	}
 
-	if (time.s > 0) {
-		t = `${t}:${padWithLeadingZero(time.s, 10)}`;
+	if (seconds > 0) {
+		t = `${t}:${padWithLeadingZero(seconds, 10)}`;
 	}
 
 	return t + (isPm ? 'PM' : 'AM');
