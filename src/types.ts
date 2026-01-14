@@ -107,6 +107,7 @@ export type HeadingLevel =
 export type ThemeColor =
 	| 'primary'
 	| 'secondary'
+	| 'success'
 	| 'info'
 	| 'warning'
 	| 'danger'
