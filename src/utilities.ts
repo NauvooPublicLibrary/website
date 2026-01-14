@@ -255,6 +255,63 @@ export async function getLibraryHours(): Promise<(EventTime|null)[]> {
 }
 
 /**
+ * Reads the library's events from configuration
+ */
+export async function getEvents(): Promise<EventData[]> {
+	const rawEvents = await readJson<Record<string, any>[]>('events');
+	const events: EventData[] = [];
+
+	for (const rawEvent of rawEvents) {
+		let eventTimes: EventTime[] = [];
+
+		for (const time of rawEvent['times'] as Record<string, string>[]) {
+			const eventTime = extractEventTimeFromJson(time);
+			eventTimes.push(eventTime);
+		}
+
+		const event: EventData = {
+			title: rawEvent['title'] as string,
+			location: rawEvent['location'] as string,
+			type: rawEvent['type'] as EventType,
+			blurb: rawEvent['blurb'] as string,
+			description: rawEvent['description'] as string[],
+			times: eventTimes
+		};
+
+		events.push(event);
+	}
+
+	return events.sort((event1, event2) => {
+		const event1Time = event1.times[0]!;
+		const event2Time = event2.times[0]!;
+
+		// First sort on date...
+		if (event1Time.date! > event2Time.date!) {
+			return 1;
+		} else if (event1Time.date! < event2Time.date!) {
+			return -1;
+		}
+
+		// ...then sort on hours...
+		if (event1Time.startTime.h > event2Time.startTime.h) {
+			return 1;
+		} else if (event1Time.startTime.h < event2Time.startTime.h) {
+			return -1;
+		}
+
+		// ...then sort on minutes...
+		if (event1Time.startTime.m > event2Time.startTime.m) {
+			return 1;
+		} else if (event1Time.startTime.m < event2Time.startTime.m) {
+			return -1;
+		}
+
+		// ...then finally sort on the event name
+		return event1.title.localeCompare(event2.title);
+	});
+}
+
+/**
  * Reads JSON input and returns an EventTime
  *
  * @param input The JSON input to read

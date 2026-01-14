@@ -1,0 +1,45 @@
+﻿[
+	{
+		"title": "Monthly board meeting",
+		"location": "Activity Room",
+		"blurb": "The monthly board meeting for the month of January",
+		"type": "meeting",
+		"description": [
+			"This is the monthly board meeting.",
+			"Topics discussed may include a variety of items, such as changes to library policy, staffing needs, upcoming events, etc. These meetings are generally open to the public."
+		],
+		"times": [
+			{
+				"date": "01-07-2026",
+				"startTime": "10AM"
+			}
+		]
+	},
+	{
+		"title": "Story Time",
+		"location": "Activity Room",
+		"blurb": "Weekly story time for children",
+		"type": "program",
+		"description": [
+			"This is the weekly story time.",
+			"Story time is open to the public and is intended for young children. The reader is a library volunteer, typically a different person each week."
+		],
+		"times": [
+			{
+				"date": "01-07-2026",
+				"startTime": "10AM",
+				"endTime": "11AM"
+			},
+			{
+				"date": "01-14-2026",
+				"startTime": "10AM",
+				"endTime": "11AM"
+			},
+			{
+				"date": "01-21-2026",
+				"startTime": "10AM",
+				"endTime": "11AM"
+			}
+		]
+	}
+]
