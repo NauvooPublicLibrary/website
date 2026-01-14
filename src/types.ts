@@ -93,6 +93,17 @@ export type Time = {
 	s: number;
 }
 
+/**
+ * HTML heading levels
+ */
+export type HeadingLevel =
+	| '1' | 1
+	| '2' | 2
+	| '3' | 3
+	| '4' | 4
+	| '5' | 5
+	| '6' | 6
+
 export type ThemeColor =
 	| 'primary'
 	| 'secondary'
