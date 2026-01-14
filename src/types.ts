@@ -54,6 +54,41 @@ export type Address = {
 }
 
 /**
+ * The complete data for an event
+ */
+export type EventData = {
+	/**
+	 * The title or headline for the event
+	 */
+	title: string;
+
+	/**
+	 * The location of the event
+	 */
+	location: string;
+
+	/**
+	 * The type of the event
+	 */
+	type: EventType;
+
+	/**
+	 * The time of the event
+	 */
+	times: EventTime[];
+
+	/**
+	 * A short description of the event
+	 */
+	blurb: string;
+
+	/**
+	 * A detailed description of the event
+	 */
+	description: string[];
+}
+
+/**
  * The start and end time for an event
  */
 export type EventTime = {
@@ -72,6 +107,13 @@ export type EventTime = {
 	 */
 	date?: Date;
 }
+
+/**
+ * Types of events hosted by the library
+ */
+export type EventType =
+	| 'meeting'
+	| 'program'
 
 /**
  * A 24-hour formatted time

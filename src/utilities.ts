@@ -1,4 +1,4 @@
-﻿import type { EventTime, Time } from '@/types.ts';
+﻿import type { EventData, EventTime, EventType, Time } from '@/types.ts';
 
 /**
  * Converts a numeric day of the week to a string representation
@@ -17,6 +17,48 @@ export function mapDayNumberToName(day: number): string {
 	];
 
 	return days[day]!;
+}
+
+/**
+ * Converts a numeric month of the year to a string representation
+ *
+ * @param month The month number to retrieve
+ *
+ * @returns The short month name
+ */
+export function mapMonthNumberToName(month: number): string {
+	const months = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec'
+	];
+
+	return months[month]!;
+}
+
+/**
+ * Formats a date for human readers
+ *
+ * @param date The date to format
+ * @param omitYear Whether to omit the 4-digit year from the date
+ *
+ * @returns The formatted date
+ */
+export function formatDate(date: Date, omitYear?: boolean): string {
+	const shortDate = `${mapMonthNumberToName(date.getMonth())} ${date.getDate()}`;
+
+	omitYear ??= new Date().getFullYear() === date.getFullYear();
+
+	return omitYear ? shortDate : `${shortDate}, ${date.getFullYear()}`;
 }
 
 const invalidTime = 'You must provide a valid time';
