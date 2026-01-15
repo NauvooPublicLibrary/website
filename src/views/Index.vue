@@ -24,9 +24,9 @@ onBeforeMount(async () => {
 	heading='2'
 >
 	<CardGallery
-		:col='12'
-		:md='6'
-		:lg='4'
+		col='12'
+		md='6'
+		lg='4'
 		:items='events'
 	>
 		<template #itemTemplate='event'>

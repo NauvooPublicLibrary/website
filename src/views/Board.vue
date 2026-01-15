@@ -27,16 +27,15 @@ onBeforeMount(async () => {
 <ContentBlock title='Meet the board'>
 	<CardGallery
 		:items='members'
-		:col='12'
-		:md='6'
-		:lg='4'
-		:xl='3'
+		col='12'
+		md='6'
+		lg='4'
+		xl='3'
 	>
 		<template #itemTemplate='person'>
 			<Biography
 				:person='person'
-				titleHeading='2'
-				subtitleHeading='3'
+				:heading='NaN'
 			/>
 		</template>
 
