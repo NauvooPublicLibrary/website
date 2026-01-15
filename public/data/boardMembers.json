@@ -1,0 +1,47 @@
+[
+	{
+		"firstName": "Rosie",
+		"lastName": "McKoon",
+		"position": "President"
+	},
+	{
+		"firstName": "Julie",
+		"lastName": "Johnson",
+		"position": "Vice-President"
+	},
+	{
+		"firstName": "Angela",
+		"lastName": "Zundel",
+		"position": "Secretary"
+	},
+	{
+		"firstName": "",
+		"lastName": "",
+		"position": "Treasurer"
+	},
+	{
+		"firstName": "Michael",
+		"lastName": "Kesler",
+		"position": "Member"
+	},
+	{
+		"firstName": "Lisa",
+		"lastName": "Parker",
+		"position": "Member"
+	},
+	{
+		"firstName": "Jennifer",
+		"lastName": "Gardner",
+		"position": "Member"
+	},
+	{
+		"firstName": "Jim",
+		"lastName": "Hopp",
+		"position": "Member"
+	},
+	{
+		"firstName": "Brenda",
+		"lastName": "Adkisson",
+		"position": "Member"
+	}
+]

@@ -5,6 +5,7 @@ import type { RouteRecordRaw } from 'vue-router';
 import Home from '@/views/Index.vue';
 import Contact from '@/views/Contact.vue';
 import Resources from '@/views/Resources.vue';
+import Board from '@/views/Board.vue';
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -18,6 +19,10 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: '/resources',
 		component: Resources
+	},
+	{
+		path: '/board',
+		component: Board
 	}
 ];
 

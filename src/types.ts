@@ -151,6 +151,51 @@ export type Resource = {
 }
 
 /**
+ * The information for a person
+ */
+export type Person<T extends string> = {
+	/**
+	 * The person's first name
+	 */
+	firstName?: string;
+
+	/**
+	 * The person's last name
+	 */
+	lastName?: string;
+
+	/**
+	 * The person's position within the library
+	 */
+	position: T;
+
+	/**
+	 * The person's biography. Each entry represents a paragraph
+	 */
+	biography?: string[];
+
+	/**
+	 * The person's image URL, if public
+	 */
+	image?: string;
+
+	/**
+	 * The person's contact information, if public
+	 */
+	contact?: ContactInformation;
+}
+
+/**
+ * The available positions on the library board
+ */
+export type BoardPosition =
+	| 'President'
+	| 'Vice-President'
+	| 'Secretary'
+	| 'Treasurer'
+	| 'Member'
+
+/**
  * HTML heading levels
  */
 export type HeadingLevel =
