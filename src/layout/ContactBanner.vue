@@ -19,7 +19,7 @@ onBeforeMount(async () => {
 
 <template>
 <div class='bg-dark text-white'>
-	<div class='container d-md-flex justify-content-md-between text-center'>
+	<div class='container-md px-0 px-md-3 d-md-flex justify-content-md-between text-center'>
 		<p class='text-light mb-0 py-2'>
 			<Icon icon='clock'/>
 			<template v-if='todaysHours'>
