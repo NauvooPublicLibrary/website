@@ -8,7 +8,7 @@ type Props = {
 	/**
 	 * The level of the block heading
 	 */
-	heading: HeadingLevel;
+	heading?: HeadingLevel;
 
 	/**
 	 * The content of the block heading
@@ -16,7 +16,7 @@ type Props = {
 	title: string;
 }
 
-defineProps<Props>();
+const { heading = '1' } = defineProps<Props>();
 </script>
 
 <template>
