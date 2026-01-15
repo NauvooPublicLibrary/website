@@ -1,4 +1,5 @@
-﻿export { default as ContactInfo } from './info/ContactInfo.vue';
+﻿export { default as Biography } from './Biography.vue';
+export { default as ContactInfo } from './info/ContactInfo.vue';
 export { default as ContactInfoSection } from './info/ContactInfoSection.vue';
 export { default as ContentBlock } from './ContentBlock.vue';
 export { default as EventCard } from './events/EventCard.vue';

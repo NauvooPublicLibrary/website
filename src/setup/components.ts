@@ -3,6 +3,7 @@ import type { App } from 'vue';
 
 export default function setupComponents(app: App<Element>) {
 	app
+		.component('Biography', components.Biography)
 		.component('ContactInfo', components.ContactInfo)
 		.component('ContactInfoSection', components.ContactInfoSection)
 		.component('ContentBlock', components.ContentBlock)
