@@ -7,12 +7,10 @@ import type { BoardPosition, HeadingLevel, Person } from '@/types.ts';
 
 type Props = {
 	person: Person<BoardPosition>;
-	titleHeading: HeadingLevel;
-	subtitleHeading: HeadingLevel;
+	heading: Exclude<HeadingLevel, 6>;
 }
 
-const { person } = defineProps<Props>();
-
+const { person, heading } = defineProps<Props>();
 const fullName = computed(() => {
 	if (person.firstName && person.lastName) {
 		return `${person.firstName} ${person.lastName}`;
@@ -20,6 +18,8 @@ const fullName = computed(() => {
 
 	return '(Vacant)';
 });
+const titleHeading = computed(() => parseInt(heading));
+const subtitleHeading = computed(() => titleHeading.value - 1);
 </script>
 
 <template>

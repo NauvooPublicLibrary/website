@@ -35,7 +35,7 @@ onBeforeMount(async () => {
 		<template #itemTemplate='person'>
 			<Biography
 				:person='person'
-				:heading='NaN'
+				heading='2'
 			/>
 		</template>
 

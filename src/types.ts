@@ -199,12 +199,12 @@ export type BoardPosition =
  * HTML heading levels
  */
 export type HeadingLevel =
-	| '1' | 1
-	| '2' | 2
-	| '3' | 3
-	| '4' | 4
-	| '5' | 5
-	| '6' | 6
+	| '1'
+	| '2'
+	| '3'
+	| '4'
+	| '5'
+	| '6'
 
 /**
  * Bootstrap-supported gap sizes
