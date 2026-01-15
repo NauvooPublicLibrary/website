@@ -196,6 +196,13 @@ export type BoardPosition =
 	| 'Member'
 
 /**
+ * the available positions on the library staff
+ */
+export type StaffPosition =
+	| 'Director'
+	| 'Aide'
+
+/**
  * HTML heading levels
  */
 export type HeadingLevel =

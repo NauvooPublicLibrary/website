@@ -6,6 +6,7 @@ import Home from '@/views/Index.vue';
 import Contact from '@/views/Contact.vue';
 import Resources from '@/views/Resources.vue';
 import Board from '@/views/Board.vue';
+import Staff from '@/views/Staff.vue';
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -23,6 +24,10 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: '/board',
 		component: Board
+	},
+	{
+		path: '/staff',
+		component: Staff
 	}
 ];
 
