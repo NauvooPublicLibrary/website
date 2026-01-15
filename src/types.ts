@@ -136,6 +136,21 @@ export type Time = {
 }
 
 /**
+ * A linked resource
+ */
+export type Resource = {
+	/**
+	 * The display text of the resource
+	 */
+	text: string;
+
+	/**
+	 * The link to the resource
+	 */
+	url: string;
+}
+
+/**
  * HTML heading levels
  */
 export type HeadingLevel =

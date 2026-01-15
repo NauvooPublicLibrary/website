@@ -11,5 +11,6 @@ export default function setupComponents(app: App<Element>) {
 		.component('Icon', components.Icon)
 		.component('Link', components.Link)
 		.component('NavItem', components.NavItem)
+		.component('ResourceCard', components.ResourceCard)
 		.component('Timespan', components.Timespan);
 }
