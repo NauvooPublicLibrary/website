@@ -4,6 +4,8 @@ import type { App } from 'vue';
 export default function setupComponents(app: App<Element>) {
 	app
 		.component('Biography', components.Biography)
+		.component('Card', components.Card)
+		.component('CardBody', components.CardBody)
 		.component('CardGallery', components.CardGallery)
 		.component('ContactInfo', components.ContactInfo)
 		.component('ContactInfoSection', components.ContactInfoSection)

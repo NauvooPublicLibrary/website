@@ -1,4 +1,6 @@
 ﻿export { default as Biography } from './Biography.vue';
+export { default as Card } from './Card.vue';
+export { default as CardBody } from './CardBody.vue';
 export { default as CardGallery } from './CardGallery.vue';
 export { default as ContactInfo } from './ContactInfo.vue';
 export { default as ContactInfoSection } from './ContactInfoSection.vue';
