@@ -4,7 +4,6 @@
 >
 import { computed } from 'vue';
 import type { BoardPosition, HeadingLevel, Person } from '@/types.ts';
-import ContactInfo from '@/components/info/ContactInfo.vue';
 
 type Props = {
 	person: Person<BoardPosition>;

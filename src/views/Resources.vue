@@ -4,7 +4,6 @@
 import { onBeforeMount, ref } from 'vue';
 import { readJson } from '@/utilities.ts';
 import type { Resource } from '@/types.ts';
-import ResourceCard from '@/components/ResourceCard.vue';
 
 const resources = ref<Resource[]>([]);
 

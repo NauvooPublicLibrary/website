@@ -4,7 +4,6 @@
 import { onBeforeMount, ref } from 'vue';
 import { readJson } from '@/utilities.ts';
 import type { ContactInformation } from '@/types.ts';
-import { ContentBlock } from '@/components';
 
 const libraryContactInfo = ref<ContactInformation>();
 

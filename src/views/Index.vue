@@ -4,7 +4,6 @@
 import { onBeforeMount, ref } from 'vue';
 import { getEvents } from '@/utilities.ts';
 import type { EventData } from '@/types.ts';
-import { EventCard } from '@/components';
 
 const events = ref<EventData[]>();
 
