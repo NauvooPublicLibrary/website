@@ -4,6 +4,7 @@ import type { RouteRecordRaw } from 'vue-router';
 
 import Home from '@/views/Index.vue';
 import Contact from '@/views/Contact.vue';
+import Resources from '@/views/Resources.vue';
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -13,6 +14,10 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: '/contact',
 		component: Contact
+	},
+	{
+		path: '/resources',
+		component: Resources
 	}
 ];
 
