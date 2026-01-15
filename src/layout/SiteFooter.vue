@@ -30,8 +30,9 @@ const links = [
 		text: 'Meeting agendas'
 	},
 	{
-		href: '/meetings/minutes',
-		text: 'Meeting minutes'
+		href: '/docs/meeting-minutes.pdf',
+		text: 'Meeting minutes',
+		target: '_blank'
 	},
 	{
 		href: '/services',
@@ -90,6 +91,7 @@ const links = [
 							<RouterLink
 								:to='link.href'
 								class='text-white'
+								:target='link.target'
 							>
 								{{ link.text }}
 							</RouterLink>
