@@ -5,6 +5,10 @@
 import { ref } from 'vue';
 
 const open = ref(false);
+
+function toggleNav() {
+	open.value = !open.value;
+}
 </script>
 
 <template>
@@ -12,7 +16,7 @@ const open = ref(false);
 	<div class='container'>
 		<button
 			class='btn btn-outline-dark d-block d-lg-none'
-			@click='open = !open'
+			@click='toggleNav'
 		>
 			<Icon
 				v-if='open'
@@ -24,13 +28,16 @@ const open = ref(false);
 			/>
 		</button>
 
-		<div :class='[
-			"collapse",
-			"navbar-collapse",
-			{
-				"show": open
-			}
-		]'>
+		<div
+			:class='[
+				"collapse",
+				"navbar-collapse",
+				{
+					"show": open
+				}
+			]'
+			@click='toggleNav'
+		>
 			<ul class='navbar-nav'>
 				<NavItem href='/'>
 					Home
