@@ -9,23 +9,25 @@ const resources = ref<Resource[]>([]);
 
 onBeforeMount(async () => {
 	resources.value = await readJson<Resource[]>('libraryResources');
-	console.log(resources.value);
 });
 </script>
 
 <template>
 <ContentBlock title='Resources'>
-	<div class='row g-2'>
-		<div
-			v-for='resource in resources'
-			class='col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch'
-		>
+	<CardGallery
+		:col='12'
+		:sm='6'
+		:md='4'
+		:lg='3'
+		:items='resources'
+	>
+		<template #itemTemplate='resource'>
 			<ResourceCard
 				:resource='resource'
 				heading='2'
 				class='w-100'
 			/>
-		</div>
-	</div>
+		</template>
+	</CardGallery>
 </ContentBlock>
 </template>

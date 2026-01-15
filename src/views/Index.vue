@@ -23,17 +23,19 @@ onBeforeMount(async () => {
 	title='Upcoming events'
 	heading='2'
 >
-	<div class='row g-2'>
-		<div
-			v-for='event in events'
-			class='col-12 col-md-6 col-lg-4 d-flex'
-		>
+	<CardGallery
+		:col='12'
+		:md='6'
+		:lg='4'
+		:items='events'
+	>
+		<template #itemTemplate='event'>
 			<EventCard
 				:event='event'
 				heading='3'
 			/>
-		</div>
-	</div>
+		</template>
+	</CardGallery>
 </ContentBlock>
 
 <Hero>

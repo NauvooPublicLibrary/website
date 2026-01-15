@@ -25,17 +25,21 @@ onBeforeMount(async () => {
 
 <template>
 <ContentBlock title='Meet the board'>
-	<div class='row g-2'>
-		<div
-			class='col-12 col-md-6 col-lg-4 col-xl-3 d-flex'
-			v-for='member in members'
-		>
+	<CardGallery
+		:items='members'
+		:col='12'
+		:md='6'
+		:lg='4'
+		:xl='3'
+	>
+		<template #itemTemplate='person'>
 			<Biography
-				:person='member'
+				:person='person'
 				titleHeading='2'
 				subtitleHeading='3'
 			/>
-		</div>
-	</div>
+		</template>
+
+	</CardGallery>
 </ContentBlock>
 </template>
