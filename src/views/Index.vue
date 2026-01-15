@@ -5,7 +5,7 @@ import { onBeforeMount, ref } from 'vue';
 import { getEvents } from '@/utilities.ts';
 import type { EventData } from '@/types.ts';
 
-const events = ref<EventData[]>();
+const events = ref<EventData[]>([]);
 
 onBeforeMount(async () => {
 	events.value = await getEvents();

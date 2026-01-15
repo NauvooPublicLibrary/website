@@ -7,7 +7,7 @@ import { readJson } from '@/utilities.ts';
 
 import type { BoardPosition, Person } from '@/types.ts';
 
-const members = ref<Person<BoardPosition>[]>();
+const members = ref<Person<BoardPosition>[]>([]);
 
 onBeforeMount(async () => {
 	const allMembers = await readJson<Person<BoardPosition>[]>('boardMembers');
