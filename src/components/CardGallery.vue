@@ -48,9 +48,8 @@ type Props<T> = {
 }
 
 const {
-	col = 12,
-	gap = 2
 	col = '12',
+	gap = '2'
 } = defineProps<Props<T>>();
 </script>
 

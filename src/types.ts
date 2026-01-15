@@ -210,12 +210,12 @@ export type HeadingLevel =
  * Bootstrap-supported gap sizes
  */
 export type GapSize =
-	| 0
-	| 1
-	| 2
-	| 3
-	| 4
-	| 5
+	| '0'
+	| '1'
+	| '2'
+	| '3'
+	| '4'
+	| '5'
 
 /**
  * Bootstrap-supported column sizes
