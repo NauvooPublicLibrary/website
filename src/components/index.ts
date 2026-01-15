@@ -1,11 +1,11 @@
 ﻿export { default as Biography } from './Biography.vue';
-export { default as ContactInfo } from './info/ContactInfo.vue';
-export { default as ContactInfoSection } from './info/ContactInfoSection.vue';
+export { default as ContactInfo } from './ContactInfo.vue';
+export { default as ContactInfoSection } from './ContactInfoSection.vue';
 export { default as ContentBlock } from './ContentBlock.vue';
-export { default as EventCard } from './events/EventCard.vue';
+export { default as EventCard } from './EventCard.vue';
 export { default as Hero } from './Hero.vue';
 export { default as Icon } from './Icon.vue';
 export { default as Link } from './Link.vue';
 export { default as NavItem } from './NavItem.vue';
 export { default as ResourceCard } from './ResourceCard.vue';
-export { default as Timespan } from './events/Timespan.vue';
+export { default as Timespan } from './Timespan.vue';
