@@ -2,32 +2,17 @@
 	lang='ts'
 	setup
 >
-import { computed } from 'vue';
-
 const { href } = defineProps<{ href: string }>();
-
-const isLocal = computed(() => href.startsWith('/'));
-const classes = 'nav-link text-uppercase';
 </script>
 
 <template>
 <li class='nav-item'>
-	<RouterLink
-		v-if='isLocal'
-		:to='href'
-		:class='classes'
-	>
-		<slot/>
-	</RouterLink>
-
-	<a
-		v-else
+	<Link
 		:href='href'
-		target='_blank'
-		:class='classes'
+		class='nav-link text-uppercase'
 	>
 		<slot/>
-	</a>
+	</Link>
 </li>
 </template>
 
