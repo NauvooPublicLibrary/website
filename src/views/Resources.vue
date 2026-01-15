@@ -16,7 +16,7 @@ onBeforeMount(async () => {
 
 <template>
 <ContentBlock title='Resources'>
-	<div class='row'>
+	<div class='row g-2'>
 		<div
 			v-for='resource in resources'
 			class='col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch'
