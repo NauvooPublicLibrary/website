@@ -13,12 +13,21 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-<Hero backgroundImage='/images/community-center.jpg'>
-	<h1 class='display-4 mb-5'>
-		Nauvoo Public Library
-	</h1>
+<Hero
+	backgroundImage='/images/community-center.jpg'
+	:style='{
+		backgroundPositionX: "center",
+		backgroundPositionY: "85%",
+		height: "50vh"
+	}'
+>
+</Hero>
 
-	<p class='display-6'>
+<Hero backgroundColor='secondary'>
+	<h2>
+		The Nauvoo Public Library mission
+	</h2>
+	<p>
 		The mission of the Nauvoo Public Library is to provide materials and services for community residents of all ages for personal enrichment, enjoyment and educational needs. The library is dedicated to providing practical access to all forms of media. Programs will be developed to stimulate children’s interest and appreciation for reading and learning.
 	</p>
 </Hero>
