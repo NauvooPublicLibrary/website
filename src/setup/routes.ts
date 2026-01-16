@@ -9,6 +9,7 @@ import Board from '@/views/Board.vue';
 import Staff from '@/views/Staff.vue';
 import Services from '@/views/Services.vue';
 import Agendas from '@/views/meetings/Agendas.vue';
+import Policies from '@/views/Policies.vue';
 
 const routes: RouteRecordRaw[] = [
 	{
@@ -34,6 +35,10 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: '/services',
 		component: Services
+	},
+	{
+		path: '/policies',
+		component: Policies
 	},
 	{
 		path: '/meetings',
