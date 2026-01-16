@@ -36,10 +36,7 @@ const {
 			"position-relative",
 			"background-image-cover",
 			`bg-${backgroundColor}`,
-			`text-${textColor}`,
-			{
-				"ratio ratio-16x9": !!backgroundImage
-			}
+			`text-${textColor}`
 		]'
 		:style='{
 			backgroundImage: backgroundImage ? `url("${backgroundImage}")` : undefined
