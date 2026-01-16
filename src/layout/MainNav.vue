@@ -59,10 +59,3 @@ function toggleNav() {
 	</div>
 </nav>
 </template>
-
-<style
-	lang='scss'
-	scoped
->
-
-</style>
