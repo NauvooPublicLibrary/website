@@ -22,7 +22,7 @@ const { href } = defineProps<{ href: string }>();
 	transition: border-bottom-color 200ms ease-in-out;
 
 	&:hover {
-		border-bottom-color: var(--bs-primary);
+		border-bottom-color: var(--bs-secondary);
 	}
 }
 </style>
