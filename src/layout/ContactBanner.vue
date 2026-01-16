@@ -18,9 +18,9 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-<div class='bg-dark text-white'>
+<div class='bg-primary text-white'>
 	<div class='container-md px-0 px-md-3 d-md-flex justify-content-md-between text-center'>
-		<p class='text-light mb-0 py-2'>
+		<p class='mb-0 py-2'>
 			<Icon icon='clock'/>
 			<template v-if='todaysHours'>
 				Today's hours: <Timespan :time='todaysHours'/>
@@ -31,7 +31,7 @@ onBeforeMount(async () => {
 		</p>
 
 		<a
-			class='d-block text-decoration-none bg-primary text-white py-2 px-3'
+			class='d-block text-decoration-none bg-secondary text-white py-2 px-3'
 			:href='`tel:${contactInfo?.phone}`'
 		>
 			<Icon icon='phone'/>
