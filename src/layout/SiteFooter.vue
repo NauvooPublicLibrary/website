@@ -46,7 +46,7 @@ const links = [
 </script>
 
 <template>
-<footer class='text-bg-dark py-5'>
+<footer class='text-bg-primary py-5'>
 	<div class='container'>
 		<div class='row'>
 			<FooterSection title='Contact'>
