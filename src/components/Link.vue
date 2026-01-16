@@ -6,7 +6,7 @@ import { computed } from 'vue';
 
 const { href } = defineProps<{ href: string }>();
 
-const isLocal = computed(() => href.startsWith('/'));
+const isLocal = computed(() => href.startsWith('/') && !href.includes('.'));
 </script>
 
 <template>
