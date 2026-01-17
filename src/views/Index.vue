@@ -8,7 +8,10 @@ import type { EventData } from '@/types.ts';
 const events = ref<EventData[]>([]);
 
 onBeforeMount(async () => {
-	events.value = await getEvents();
+	const allEvents = await getEvents();
+
+	// Only show up to 6 events on this page
+	events.value = allEvents.slice(0, 6);
 })
 </script>
 
