@@ -281,34 +281,56 @@ export async function getEvents(): Promise<EventData[]> {
 		events.push(event);
 	}
 
-	return events.sort((event1, event2) => {
-		const event1Time = event1.times[0]!;
-		const event2Time = event2.times[0]!;
+	return events
 
-		// First sort on date...
-		if (event1Time.date! > event2Time.date!) {
-			return 1;
-		} else if (event1Time.date! < event2Time.date!) {
-			return -1;
-		}
+		// Filter out past events
+		.filter(event => {
+			const times = [...event.times];
+			const today = new Date();
 
-		// ...then sort on hours...
-		if (event1Time.startTime.h > event2Time.startTime.h) {
-			return 1;
-		} else if (event1Time.startTime.h < event2Time.startTime.h) {
-			return -1;
-		}
+			for (let time of times) {
+				const date = time.date;
+				if (date === undefined ||
+					date.getFullYear() < today.getFullYear() ||
+					date.getMonth() < today.getMonth() ||
+					date.getDate() < today.getDate()) {
+					const removeAt = event.times.findIndex(t => t === time);
+					event.times.splice(removeAt, 1);
+				}
+			}
 
-		// ...then sort on minutes...
-		if (event1Time.startTime.m > event2Time.startTime.m) {
-			return 1;
-		} else if (event1Time.startTime.m < event2Time.startTime.m) {
-			return -1;
-		}
+			return event.times.length > 0;
+		})
 
-		// ...then finally sort on the event name
-		return event1.title.localeCompare(event2.title);
-	});
+		// Sort future events by date and time ascending
+		.sort((event1, event2) => {
+			const event1Time = event1.times[0]!;
+			const event2Time = event2.times[0]!;
+
+			// First sort on date...
+			if (event1Time.date! > event2Time.date!) {
+				return 1;
+			} else if (event1Time.date! < event2Time.date!) {
+				return -1;
+			}
+
+			// ...then sort on hours...
+			if (event1Time.startTime.h > event2Time.startTime.h) {
+				return 1;
+			} else if (event1Time.startTime.h < event2Time.startTime.h) {
+				return -1;
+			}
+
+			// ...then sort on minutes...
+			if (event1Time.startTime.m > event2Time.startTime.m) {
+				return 1;
+			} else if (event1Time.startTime.m < event2Time.startTime.m) {
+				return -1;
+			}
+
+			// ...then finally sort on the event name
+			return event1.title.localeCompare(event2.title);
+		});
 }
 
 /**
