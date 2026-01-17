@@ -2,7 +2,7 @@
 	lang='ts'
 	setup
 >
-const { tag = 'section' } = defineProps<{ tag: string }>();
+const { tag = 'section' } = defineProps<{ tag?: string }>();
 </script>
 
 <template>
