@@ -73,7 +73,9 @@ const linkColorClass = computed(() => linkColor ? `text-${linkColor}` : undefine
 			<template #content>
 				<a
 					:href='`mailto:${contact.email}`'
-					:class='linkColorClass'
+					:class='[
+						linkColorClass,
+					]'
 				>
 					{{ contact.email }}
 				</a>
@@ -81,3 +83,9 @@ const linkColorClass = computed(() => linkColor ? `text-${linkColor}` : undefine
 		</ContactInfoSection>
 	</address>
 </template>
+
+<style scoped>
+.address a {
+	word-break: break-all;
+}
+</style>
