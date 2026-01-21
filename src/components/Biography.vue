@@ -23,7 +23,7 @@ const fullName = computed(() => {
 
 <template>
 <Card
-	:img='person.image ?? "/images/board/vacant.jpg"'
+	:img='person.image ?? "/images/blank.jpg"'
 	:imgAlt="`${fullName}'s profile picture`"
 	:heading='heading'
 	:title='fullName'
