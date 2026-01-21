@@ -31,13 +31,13 @@ const fullName = computed(() => {
 	titleColor='primary'
 >
 	<template #body>
-		<CardBody v-if='person.biography && person.biography.length > 0'>
+		<CardBody v-if='person.biography && person.biography.length > 0' class='flex-grow-1'>
 			<p v-for='p in person.biography'>
 				{{ p }}
 			</p>
 		</CardBody>
 
-		<CardBody v-if='person.contact'>
+		<CardBody v-if='person.contact' class='flex-grow-0'>
 			<p>Contact {{  fullName }}:</p>
 			<ContactInfo :contact='person.contact'/>
 		</CardBody>
