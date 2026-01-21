@@ -1,4 +1,8 @@
-﻿import type { ProxyOptions } from 'vite';
+﻿import { faker } from '@faker-js/faker';
+
+import type { ProxyOptions } from 'vite';
+import type { SexType } from '@faker-js/faker';
+import type { Person } from '../src/types.ts';
 
 const proxies: Record<string, ProxyOptions> = {};
 
@@ -55,4 +59,47 @@ export function times(
 	return Array(t)
 		.fill(0)
 		.map((value, index, array) => cb(value, index, array));
+}
+
+/**
+ * Creates a fake person
+ *
+ * @param position The person's position
+ * @param sex The person's sex. Randomized if omitted
+ *
+ * @returns The fake person
+ */
+export function fakePerson<T extends string>(
+	position: T,
+	sex?: SexType
+): Person<T> {
+	sex ??= random(['female', 'male']);
+
+	const person: Person<T> = {
+		firstName: faker.person.firstName(sex),
+		lastName: faker.person.lastName(),
+		position,
+		image: faker.image.personPortrait({ sex, size: 512 }),
+		biography: times(3, _ => faker.word.words({
+			count: {
+				min: 10,
+				max: 25
+			}
+		}))
+	};
+
+	person.contact = {
+		email: faker.internet.email({
+			firstName: person.firstName,
+			lastName: person.lastName
+		}),
+		phone: faker.phone.number({ style: 'national' }),
+		address: {
+			address1: faker.location.streetAddress(),
+			city: faker.location.city(),
+			state: faker.location.state({ abbreviated: true })
+		}
+	}
+
+	return person;
 }

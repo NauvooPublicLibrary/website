@@ -1,1 +1,3 @@
-﻿export { getProxies } from './mockUtils';
+﻿import './data/boardMembers';
+
+export { getProxies } from './mockUtils';
