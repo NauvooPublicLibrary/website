@@ -57,7 +57,7 @@ const subtitleHeading = computed(() => titleHeading.value + 1);
 		class='card-img-top'
 	/>
 
-	<CardBody tag='header'>
+	<CardBody tag='header' class='flex-grow-0'>
 		<slot name='prependHeader'/>
 
 		<component
