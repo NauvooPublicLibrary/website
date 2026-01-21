@@ -1,10 +1,22 @@
-﻿[
+[
 	{
-		"title": "Monthly meeting - January 19, 2026",
-		"file": "/docs/agenda_01-19-26.docx"
+		"text": "January 1, 2025 Agenda",
+		"url": "/docs/agenda-1.txt"
 	},
 	{
-		"title": "Past meeting agendas",
-		"file": "/docs/past-agendas.docx"
+		"text": "December 1, 2024 Agenda",
+		"url": "/docs/agenda-2.txt"
+	},
+	{
+		"text": "November 1, 2024 Agenda",
+		"url": "/docs/agenda-3.txt"
+	},
+	{
+		"text": "October 1, 2024 Agenda",
+		"url": "/docs/agenda-4.txt"
+	},
+	{
+		"text": "September 1, 2024 Agenda",
+		"url": "/docs/agenda-5.txt"
 	}
 ]
