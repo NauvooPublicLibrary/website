@@ -4,10 +4,10 @@
 >
 import { onBeforeMount, ref } from 'vue';
 import { readJson } from '@/utilities.ts';
-import type { MeetingAgenda } from '@/types.ts';
+import type { Resource } from '@/types.ts';
 import { CardGallery, ContentBlock } from '@/components';
 
-const agendas = ref<MeetingAgenda[]>([]);
+const agendas = ref<Resource[]>([]);
 
 onBeforeMount(async () => {
 	agendas.value = await readJson('meetingAgendas');
@@ -26,10 +26,10 @@ onBeforeMount(async () => {
 			<Card :heading='2'>
 				<template #title>
 					<Link
-						:href='agenda.file'
+						:href='agenda.url'
 						class='stretched-link text-decoration-none'
 					>
-						{{ agenda.title }}
+						{{ agenda.text }}
 					</Link>
 				</template>
 			</Card>

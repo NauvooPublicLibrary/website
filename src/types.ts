@@ -151,21 +151,6 @@ export type Resource = {
 }
 
 /**
- * A public meeting agenda
- */
-export type MeetingAgenda = {
-	/**
-	 * The title of the meeting agenda
-	 */
-	title: string;
-
-	/**
-	 * The URL of the agenda file
-	 */
-	file: string;
-}
-
-/**
  * The information for a person
  */
 export type Person<T extends string> = {
