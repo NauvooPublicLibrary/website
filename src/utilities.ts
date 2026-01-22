@@ -286,14 +286,10 @@ export async function getEvents(): Promise<EventData[]> {
 		// Filter out past events
 		.filter(event => {
 			const times = [...event.times];
-			const today = new Date();
 
 			for (let time of times) {
 				const date = time.date;
-				if (date === undefined ||
-					date.getFullYear() < today.getFullYear() ||
-					date.getMonth() < today.getMonth() ||
-					date.getDate() < today.getDate()) {
+				if (date === undefined || isDateInPast(date)) {
 					const removeAt = event.times.findIndex(t => t === time);
 					event.times.splice(removeAt, 1);
 				}
@@ -352,4 +348,42 @@ export function extractEventTimeFromJson(input: Record<string, string>): EventTi
 	}
 
 	return time;
+}
+
+/**
+ * Whether a date is considered in the past <b>irrespective of the clock time on the date</b> - e.g., a date from six hours prior is not considered in the pst because it still occurred today.
+ *
+ * @param date The date to check
+ *
+ * @returns <code>true</code> if the date is in the past, otherwise <code>false</code>
+ */
+export function isDateInPast(date: Date): boolean {
+	const today = new Date();
+
+	const compareYear = date.getFullYear();
+	const todayYear = today.getFullYear();
+
+	if (compareYear < todayYear) {
+		return true;
+	} else if (compareYear > todayYear) {
+		return false;
+	}
+
+	// Years are the same
+
+	const compareMonth = date.getMonth();
+	const todayMonth = today.getMonth();
+
+	if (compareMonth < todayMonth) {
+		return true;
+	} else if (compareMonth > todayMonth) {
+		return false;
+	}
+
+	// Months are the same
+
+	const compareDay = date.getDate();
+	const todayDay = today.getDate();
+
+	return compareDay < todayDay;
 }
