@@ -14,38 +14,62 @@ import Policies from '@/views/Policies.vue';
 const routes: RouteRecordRaw[] = [
 	{
 		path: '/',
-		component: Home
+		component: Home,
+		meta: {
+			title: 'Home'
+		}
 	},
 	{
 		path: '/contact',
-		component: Contact
+		component: Contact,
+		meta: {
+			title: 'Contact us'
+		}
 	},
 	{
 		path: '/resources',
-		component: Resources
+		component: Resources,
+		meta: {
+			title: 'Resources'
+		}
 	},
 	{
 		path: '/board',
-		component: Board
+		component: Board,
+		meta: {
+			title: 'Meet the board'
+		}
 	},
 	{
 		path: '/staff',
-		component: Staff
+		component: Staff,
+		meta: {
+			title: 'Meet the staff'
+		}
 	},
 	{
 		path: '/services',
-		component: Services
+		component: Services,
+		meta: {
+			title: 'Our services'
+		}
 	},
 	{
 		path: '/policies',
-		component: Policies
+		component: Policies,
+		meta: {
+			title: 'Our policies'
+		}
 	},
 	{
 		path: '/meetings',
 		children: [
 			{
 				path: 'agendas',
-				component: Agendas
+				component: Agendas,
+				meta: {
+					title: 'Meeting agendas'
+				}
 			}
 		]
 	}
@@ -56,6 +80,10 @@ export default function setupRoutes(app: App<Element>) {
 		history: createWebHistory(),
 		scrollBehavior: () => ({ top: 0}),
 		routes
+	});
+
+	router.afterEach((to) => {
+		document.title = `${to.meta.title} | Nauvoo Public Library`;
 	});
 
 	app.use(router);
